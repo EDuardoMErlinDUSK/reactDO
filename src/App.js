@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
 
-  const [ listaTarefas, setListaTarefas ]= useState( []);
+  const[ listaTarefas, setListaTarefas ]= useState( []);
   const [ tarefa, setTarefa]= useState ({ id: '', texto: "",status:"" });
 
 function addTarefa()
@@ -26,24 +27,26 @@ function statusTarefa( id, status ){
 }
 
 useEffect(() => {
-  setTarefa( {id: "", texto: "", status:""});
+  setTarefa( {id: "", texto: "", status:""} );
 }, [listaTarefas])
 
   return (
     <>
     <header>
-      <h1>React DO</h1>
+      <h1></h1>
     </header>
-    <div>
-      <input type="text" nome="tarefa" placeholder="Digite sua tarefa" value={tarefa.texto} onChange={(e) => setTarefa( { id:Math.random(), texto: e.target.value, status: false})}></input>
-      <button onClick={addTarefa}>Adicionar</button>
-    </div>
-    <div>
+    
+    <div className="resposta">
       <ul>
         {listaTarefas.map( (item, index) => (
-          <li key={item.id}>{item.texto} <button onClick={() => statusTarefa(item.id, item.status)}>{item.status ? 'Concluida' : 'Não Concluida'}</button> <button onClick={() => ExcluirTarefa(item.id)} >Excluir</button></li>
+          <div className="Lista"> <button  className="btnOK" onClick={() => ExcluirTarefa(item.id)} ><i class="fa-solid fa-trash-can"></i></button> <li  className={item.status ? "pronto" : "naopronto"} key={item.id}>{item.texto}  <button className="btnOK" onClick={() => statusTarefa(item.id, item.status)}>{item.status ? 'OK' : 'OK'}</button> </li></div>
         ))}
       </ul>
+    </div>
+    <div className="digitando">
+      <i class="fa-solid fa-circle-plus fa-3x mais"></i>
+      <input className="place" type="text" nome="tarefa" placeholder="" value={tarefa.texto} onChange={(e) => setTarefa( { id:Math.random(), texto: e.target.value, status: false})}></input>
+      <button className="BotaoPronto" onClick={addTarefa}>Pronto</button>
     </div>
     </>
   );

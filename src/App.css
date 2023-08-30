@@ -1,0 +1,86 @@
+body{
+    background-color: rgb(88, 88, 88);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+}
+.digitando{
+    width: 20%;
+    background-color: rgb(43, 43, 43);
+    align-items: center;
+    margin-left: 40%;
+    position: absolute;
+    /*margin-top: 0%;*/
+    
+}
+
+.digitando button{
+    background-color:rgb(69, 128, 206);
+    color: aliceblue;
+}
+
+ 
+.mais{
+    color:rgb(69, 128, 206);
+}
+
+.Add{
+    background-color: rgb(69, 128, 206);
+    font-size: 2rem;
+    padding: 0.1rem;
+    border-radius: 50%;
+    margin-left: 6%;
+
+}
+
+.Lista{
+   display: flex;
+   align-items: center;
+   font-size: 200%;
+   color: white;
+   list-style-type: none;
+   display: flex;
+   justify-content: center;
+   align-items: center ;
+}
+
+
+.Lista button{
+    height: 2rem;
+}
+
+.place{
+    width: 70%;
+    height: 2rem;
+    margin-left: 15%;
+    margin-top: 6%;
+}
+
+.BotaoPronto{
+    height: 2rem;
+    width: 40%;
+    font-size: large;
+    margin-left: 30%;
+}
+
+.btnOK {
+    font-size: large;
+ 
+}
+.btnOK button{
+    width: 400%;
+}
+
+.resposta{
+    margin: 0 auto;
+}
+
+
+.pronto{
+    color: rgb(69, 128, 206) ;
+    text-decoration: line-through;
+}
+
+
+
+
